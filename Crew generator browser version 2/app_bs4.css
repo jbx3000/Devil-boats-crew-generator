@@ -1,0 +1,40 @@
+
+body{
+  background-color: #c1e3e5;
+}
+
+/* h1{
+  text-align: center;
+  font-size: 3rem;
+  background-color:  #c1e3e5;
+}
+ */
+
+#container{
+  background-color: wheat;
+  width: 800px;
+  height:  600px;
+  margin: 30px auto;
+  border: 5px solid #423400;  
+  display: flex;  
+    /*   main axis is left2right by default but can be changed to any direction */
+  flex-direction: row; 
+  /* default is row left to right */
+  justify-content: center;  /* default is flex-start, starts at left-most point */
+  flex-wrap: nowrap;
+}
+
+#container div{
+  width: 200px;
+  height: 440px;
+}
+
+#col-one {
+/*   margin: 30px auto 0px 130px; */
+  font-weight: bold;
+}
+
+#col-two {
+/*   margin: 30px auto 0px 30px; */
+}
+
