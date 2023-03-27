@@ -208,26 +208,26 @@ lastNames = [
 ] // 100 total
 
 crewmanTitle = [  // there are twelve crewman
-  "Commanding officer<br><br>",
-  "Executive officer <br><br>",
-  "Bow gunner        <br><br>",
-  "Bow ammo loader   <br><br>",
-  "AA gunner 1       <br><br>",
-  "AA gunner 2       <br><br>",
-  "Stern gunner      <br><br>",
-  "Stern ammo loader <br><br>",
-  "Torpedo mate 1    <br><br>",
-  "Torpedo mate 2    <br><br>",
-  "Radio operator    <br><br>",
-  "Engineer          <br><br>"
+  "Commanding officer",
+  "Executive officer ",
+  "Bow gunner        ",
+  "Bow ammo loader   ",
+  "AA gunner 1       ",
+  "AA gunner 2       ",
+  "Stern gunner      ",
+  "Stern ammo loader ",
+  "Torpedo mate 1    ",
+  "Torpedo mate 2    ",
+  "Radio operator    ",
+  "Engineer          "
 ] 
 
 fullName = []
 
 
-const paraOneIdEl = document.querySelector("#col-one");
+const divOneEl = document.querySelector("#col-one");
 
-const paraTwoIdEl = document.querySelector("#col-two");
+const divTwoEl = document.querySelector("#col-two");
 
 // to generate a # between 0 and 99
 // Math.floor( Math.random() * 100 );
@@ -236,33 +236,29 @@ function randZeroToNinetyNine() {
  return Math.floor( Math.random() * 100 );
 }
 
-paraOneIdEl.innerHTML = crewmanTitle.join('')
+
+crewmanTitle.forEach( title=> {
+  const newContent = document.createElement('p');
+  newContent.classList.add( 'mb-4' )
+  newContent.innerText = title
+  divOneEl.appendChild(newContent);
+})
+
 
 crewmanTitle.forEach( title=>
-    fullName.push( firstNames[randZeroToNinetyNine()] + ' ' + lastNames[randZeroToNinetyNine()]  + '<br><br>')
+    fullName.push( firstNames[ randZeroToNinetyNine() ] + ' ' + lastNames[ randZeroToNinetyNine() ] )
   )
 
-console.log(fullName)
-paraTwoIdEl.innerHTML = fullName.join('')
+//console.log(fullName)
 
-// crewmanTitle.forEach(title=>console.log(title))
+fullName.forEach( name=> {
+  const newContent = document.createElement('p');
+  newContent.classList.add( 'mb-4' )
+  newContent.innerText = name
+  divTwoEl.appendChild(newContent);
+})
 
-// stringifiedArray = titleAndFullname.join('    ')
-
-// console.log( stringifiedArray )
-
-
-
-//titleAndFullname.forEach( name => paraOneIdEl.textContent = name )
-
-// for( let i = 0; i < titleAndFullname.length; i++ ) {
-
-// }
-
-
-
-
-// let heading = document.getElementById("mainheading");
+// divTwoEl.innerHTML = fullName.join('')
 
 // first_names = {
 //   1:'ALBERT', 
